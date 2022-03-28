@@ -52,13 +52,14 @@ const app=new Vue({
         },
         //add the to the arrow
         addToDo: function(message){
-           
+           if(message.length>0){
             const newT={
                 text: capitalize(message),
                 done:false,
             };
             mustDo.push(newT);
             this.newToDo='';
+        }
         } ,       
 //change the state of the Object.done
         changeState: function(elem){
