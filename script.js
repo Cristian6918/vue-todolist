@@ -32,6 +32,9 @@ const app=new Vue({
         elemIndex:0,
         closeButton,
         newToDo:'',
+        capitalize,
+        
+      
     
         
 },
@@ -44,17 +47,16 @@ const app=new Vue({
         },
         removeToDo: function(item){
             const index=mustDo.indexOf(item);
-            console.log(index);
             mustDo.splice(index,1);
-            console.log(mustDo);
+           
         },
         addToDo: function(message){
+           
             const newT={
-                text:message,
+                text: capitalize(message),
                 done:false,
             };
             mustDo.push(newT);
-            console.log(mustDo);
             this.newToDo='';
         } ,       
 
@@ -65,3 +67,10 @@ const app=new Vue({
     },
 
 });
+
+function capitalize(str) {
+    const lower = str.toLowerCase();
+    return str.charAt(0).toUpperCase() + lower.slice(1);
+  }
+
+ 
