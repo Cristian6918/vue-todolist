@@ -1,5 +1,5 @@
 console.log('js ok');
-
+//star arrow with objects
 let mustDo=[{
     text:'Fare spesa',
     done:false,
@@ -50,6 +50,7 @@ const app=new Vue({
             mustDo.splice(index,1);
            
         },
+        //add the to the arrow
         addToDo: function(message){
            
             const newT={
@@ -59,7 +60,7 @@ const app=new Vue({
             mustDo.push(newT);
             this.newToDo='';
         } ,       
-
+//change the state of the Object.done
         changeState: function(elem){
             elem.done=!elem.done;
         }
@@ -67,7 +68,7 @@ const app=new Vue({
     },
 
 });
-
+//capitalize function
 function capitalize(str) {
     const lower = str.toLowerCase();
     return str.charAt(0).toUpperCase() + lower.slice(1);
